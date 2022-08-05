@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+    server:
+        container_name: server
+        build: server/
+        command: python server.py
+        ports:
+            - 2000:2000
+
+    script:
+        container_name: script
+        build: script/
+        command: sh script.sh
+        network_mode: host
+        depends_on:
+            - server
