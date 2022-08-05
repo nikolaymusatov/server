@@ -5,7 +5,7 @@ def start_server():
     try:
         server = socket.create_server(('', 2000))
         server.listen(10)
-        print("Listening to 127.0.0.1:2000")
+        print("Listening to localhost:2000")
         while True:
             client_socket, address = server.accept()
             data = client_socket.recv(1024).decode('utf-8')
